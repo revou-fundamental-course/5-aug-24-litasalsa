@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Link pensil -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+    <!-- link font  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" href="ASET\icon.png">
+    <title>Kalkulator BMI</title>
+</head>
+<body>
+    <header class="header-body">
+        <h1>Kalkulator BMI</h1>
+        <!-- <p>By Lolita  Salsabila</p> -->
+    </header>
+
+    <main>
+        <aside>
+            <article>
+                <p>Tubuh ideal adalah dambaan setiap orang. Selain menunjang penampilan, berat badan ideal juga menjadi indikator kesehatan tubuh. 
+                    Bagaimana denganmu? Yuk, hitung BMI-mu sekarang dan mulai perjalanan menuju kesehatan optimal!
+                </p>
+            </article>
+    
+            <form id="bmiForm" onsubmit="return false;">
+                <div class="jk">
+                    <label style="display: flex;">Jenis Kelamin</label>
+                    <input type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki"><label for="laki-laki" 
+                        name="laki-laki">Laki-laki</label>
+                    <input type="radio" id="perempuan" name="jenis-kelamin" value="perempuan"><label for="perempuan" 
+                        name="perempuan">Perempuan</label>
+                </div>
+    
+                <div class="input-group">
+                    <label for="bb">Berat Badan (kg)</label>
+                    <div class="input-icon">
+                        <input type="text" inputmode="numeric" id="bb" required>
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="usia">Usia (tahun)</label>
+                    <div class="input-icon">
+                        <input type="text" inputmode="numeric" id="usia" required>
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="tb">Tinggi Badan (cm)</label>
+                    <div class="input-icon">
+                        <input type="text" inputmode="numeric" id="tb" required>
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="button-container">
+                    <button type="button" onclick="hitungBMI()">Hitung BMI</button>
+                    <button type="reset" id="resetButton" >Reset</button>
+                </div>
+                <div id="warningMessage" style="color: red; margin-top: 10px; text-align: center;"></div>
+            </form>
+    
+            
+
+            <article>
+                <div class="kegunaan">
+                <h4>Kegunaan Fitur</h4>
+                <ol type="1">
+                    <li>Menghitung berat badan</li>
+                    <li>Menentukan kategori berat badan ideal atau tidak</li>
+                    <li>Mempersiapkan program perurunan berat badan </li>
+                </ol>
+                </div>
+                
+    
+                <p>
+                    Kalkulator ini hanya untuk digunakan oleh orang dewasa 
+                    (wanita hamil atau menyusui tidak boleh mengandalkan pembacaan BMI ini). 
+                    Jangan mengambil tindakan apa pun berdasarkan nilai BMI tanpa berkonsultasi 
+                    dengan ahli kesehatan seperti dokter.
+                </p>
+    
+                <p>
+                    Kalkulator ini memberikan gambaran tentang perbandingan berat badan Anda dengan nilai umum. 
+                    Indeks Massa Tubuh (BMI) dihitung sebagai berat badan Anda (dalam kilogram) 
+                    dibagi dengan kuadrat tinggi badan Anda (dalam meter), atau BMI = Kg/M².
+                </p>
+
+                <div class="kategori">
+                    <h4>Kategori BMI</h4>
+                    <ol type="a">
+                        <li>Berat badan kurang = < 18,5  </li>
+                        <li>Berat badan normal = 18,5–24,9</li>
+                        <li>Berat badan lebih = 25–29,9</li>
+                        <li>Obesitas = 30 atau lebih</li>
+                    </ol>
+                    
+                </div>
+                
+                
+            </article>
+        </aside>
+
+        <aside class="aside-hasil">
+
+            <div id="hasil" class="hasil-container"> 
+                <p>Hasil BMI akan ditampilkan disini</p>
+            </div>
+            
+            <div class="button-container">
+                <button> Konsultasi Ahli Gizi Via Aplikasi </button>
+            <button> Registrasi Online Ahli Gizi </button>
+            </div>
+            
+            <p>
+                BMI tidak sepenuhnya mewakili diagnosis menyeluruh
+                dari kesehatan tubuh dan resiko penyakit seseorang. 
+                Anda perlu konsultasi lebih lanjut mengenai resiko dan kehawatiran
+                anda terkait dengan berat badan Anda.
+            </p>
+
+            <div class="aside-hasil-bottom">
+                <div id="p-aside-hasil" style="text-align: center;" >
+                    <label>Beberapa Penyakit Yang Berasal Dari Kegemukan :</label>
+                    <p>Diabetes</p>
+                    <p>Hipertensi</p>
+                    <p>Sakit Jantung</p>
+                    <p>Osteoarthritis</p>
+                </div>
+                
+                <div class="button-container">
+                    <button> Konsultasi Dokter Via Aplikasi</button>
+                    <button>Registrasi Online Sekarang</button>
+                </div>
+            </div>
+
+            <p class="aside-hasil-p">Download Aplikasi</p>
+            <div class="img-download">     
+                <img src="ASET/google play.png" alt="Download di Play Store" class="img-and" >
+                <img src="ASET/app store.png" alt="Download di APP Store" class="img-app">
+            </div>
+       
+        </aside> 
+    </main>
+
+    <footer>
+        <P>made by lolita salsabila</P>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
